@@ -1,5 +1,6 @@
 import './App.css';
 import FacebookLogin from 'react-facebook-login';
+import FbLogin from './FbLogin';
 
 function App() {
 
@@ -10,20 +11,16 @@ function App() {
   };
 
   const handleFacebookLogin = () => {
-    // Xử lý đăng nhập Facebook ở đây
+    console.log('document.getElementById("msgbtn")', document.getElementById("msgbtn"))
+    document.getElementById("msgbtn").click();
+    let cl = document.getElementsByClassName("msgbtn");
+    console.log('cl', cl)
   };
 
   return (
     <div className="App">
-      <button onClick={handleFacebookLogin}>Đăng nhập bằng Facebook</button>
-      <FacebookLogin
-        style={{ display: 'none' }}
-        appId="1358287981761652"
-        autoLoad={false}
-        fields="name,email,picture"
-        callback={responseFacebook}
-      />
-    </div>
+      <FbLogin />
+    </div >
   );
 }
 
