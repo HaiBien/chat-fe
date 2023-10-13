@@ -22,7 +22,7 @@ function FacebookLogin() {
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({
-        appId: 'YOUR_APP_ID',
+        appId: '1358287981761652',
         cookie: true,
         xfbml: true,
         version: 'v12.0'
@@ -39,13 +39,6 @@ function FacebookLogin() {
     };
     document.head.appendChild(script);
   }, []);
-  
-  
-  
-  
-  
-  
-  
 
   const handleLoginClick = () => {
     // Thực hiện yêu cầu đăng nhập Facebook
