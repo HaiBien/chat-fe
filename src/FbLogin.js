@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 function FacebookLogin() {
   const [loggedIn, setLoggedIn] = useState(false);
-
-//   useEffect(() => {
-//     // Kiểm tra xem người dùng đã đăng nhập hay chưa khi thành phần được tạo.
-//     checkLoginStatus();
-//   }, []);
+  const [userInfo, setUserinfo] = useState(null);
 
   const checkLoginStatus = () => {
     // Kiểm tra trạng thái đăng nhập của người dùng, ví dụ: sử dụng Facebook SDK
     window.FB.getLoginStatus(response => {
       if (response.status === 'connected') {
+        console.log('response.status', response)
         setLoggedIn(true);
       } else {
         setLoggedIn(false);
