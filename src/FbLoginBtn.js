@@ -24,7 +24,7 @@ function App() {
         appId="291801013674575"
         autoLoad={false}
         scope="public_profile,email"
-        fields="name,email,picture,userID"
+        fields="name,email,picture"
         callback={responseFacebook}
         render={renderProps => (
           <div onClick={renderProps.onClick}>
