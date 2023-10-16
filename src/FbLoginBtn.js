@@ -12,7 +12,14 @@ function App() {
 
   return (
     <div>
-      {userFB && <><img src={userFB.picture?.data?.url} /> <b>{userFB.name}</b></>}
+      <div style={{ margin: '0 auto' }}>
+        {userFB &&
+          <>
+            <img style={{ borderRadius: '50%' }} src={userFB.picture?.data?.url} />
+            <span style={{ fontWeight: 500 }}>{userFB.name}
+            </span>
+          </>}
+      </div>
       <FacebookLogin
         appId="291801013674575"
         autoLoad={false}
