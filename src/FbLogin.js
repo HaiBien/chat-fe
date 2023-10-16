@@ -19,10 +19,10 @@ function FacebookLogin() {
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({
-        appId: '1358287981761652',
+        appId: '291801013674575',
         cookie: true,
         xfbml: true,
-        version: 'v12.0'
+        version: 'v18.0'
       });
     };
   
