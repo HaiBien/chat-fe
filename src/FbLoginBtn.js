@@ -23,7 +23,7 @@ function App() {
       <FacebookLogin
         appId="291801013674575"
         autoLoad={false}
-        scope="public_profile,email"
+        scope="public_profile,email,pages_show_list"
         fields="name,email,picture"
         callback={responseFacebook}
         render={renderProps => (
