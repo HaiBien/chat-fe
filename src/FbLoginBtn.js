@@ -3,7 +3,7 @@ import FacebookLogin from 'react-facebook-login';
 
 function App() {
   const responseFacebook = (response) => {
-    console.log('Thông tin đăng nhâp FB: ', +response);
+    console.log('Thông tin đăng nhâp FB: ', response);
   };
 
   return (
