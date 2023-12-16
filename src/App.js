@@ -1,11 +1,11 @@
 import './App.css';
-import FbLogin from './FbLoginBtn';
+import ReText from './ReText';
 
 function App() {
 
   return (
     <div className="App">
-      <FbLogin />
+      <ReText />
     </div >
   );
 }
