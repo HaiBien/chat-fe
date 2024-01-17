@@ -134,12 +134,20 @@ const App = () => {
         scope="public_profile,email,pages_show_list"
         callback={responseFacebook}
       />
+      <img
+        style={{ borderRadius: '50%', border: '1px solid gray' }}
+        src="https://scontent.fhph1-1.fna.fbcdn.net/v/t39.30808-1/414156540_122103838340161912_3592709417479965292_n.jpg?stp=cp0_dst-jpg_p50x50&_nc_cat=110&ccb=1-7&_nc_sid=4da83f&_nc_eui2=AeFL0JlWFRKYyMpO8IzMswPDf9SRxoDqY-h_1JHGgOpj6BW-irqbOL84VDhxJH_X7WBo-Bwp5g9zlqU89e1gPLa3&_nc_ohc=tmzFmv4Gtu4AX_rYPeC&_nc_ht=scontent.fhph1-1.fna&edm=AGaHXAAEAAAA&oh=00_AfAxbSYAELPj-oTh53V7XyvwUgCR3oBXjNq34v-tkr0dVA&oe=65ABEB71"
+        width="44px"
+      />
       {userAccessToken && (
         <div>
           {fanpages.map((fanpage) => {
             return <div class="d-flex position-relative">
               <div class="me-3">
-                <image src={fanpage?.picture?.data?.url} width="44px" />
+                <img
+                  style={{ borderRadius: '50%', border: '1px solid gray' }}
+                  src={fanpage?.picture?.data?.url}
+                  width="44px" />
               </div>
               <div class="flex-fill">
                 <div class="fw-bold">{fanpage.name}</div>
