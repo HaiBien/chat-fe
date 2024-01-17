@@ -137,14 +137,19 @@ const App = () => {
       {userAccessToken && (
         <div>
           <p>Mã truy cập của bạn là: {userAccessToken}</p>
-          {/* <button onClick={fetchFanpages}>Lấy danh sách fanpage</button> */}
-          <ul>
-            {fanpages.map((fanpage) => (
-              <li key={fanpage.id}>
-                {fanpage.name} - {fanpage.category}
-              </li>
-            ))}
-          </ul>
+
+          {fanpages.map((fanpage) => {
+            return <div class="d-flex position-relative">
+              <div class="me-3">
+                <img src={fanpage?.picture?.data?.url} width="44px">
+              </div>
+              <div class="flex-fill">
+                <div class="fw-bold">{fanpage.name}</div>
+                <div class="small text-secondary">{fanpage.id}</div>
+              </div>
+            </div>
+
+          })}
         </div>
       )}
     </div>
@@ -154,3 +159,6 @@ const App = () => {
 export default App;
 
 
+{/* <li key={fanpage.id}>
+   {fanpage.name} - {fanpage.category}
+ </li> */}
