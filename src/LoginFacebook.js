@@ -118,7 +118,7 @@ const App = () => {
   };
 
   const fetchFanpages = async (token = userAccessToken) => {
-    const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?access_token=${token}`);
+    const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?fields=name,picture&access_token=${token}`);
     const data = await response.json();
     console.log('data', data);
     setFanpages(data.data);
