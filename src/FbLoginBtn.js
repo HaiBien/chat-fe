@@ -21,7 +21,7 @@ function App() {
           </>}
       </div>
       <FacebookLogin
-        appId="291801013674575"
+        appId="895989838589526"
         autoLoad={false}
         scope="public_profile, email ,pages_show_list, pages_messaging"
         fields="name,email,picture"
