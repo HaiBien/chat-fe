@@ -1,5 +1,5 @@
 import './App.css';
-import ReText from './ReText';
+import ReText from './FbLoginBtn';
 
 function App() {
 
