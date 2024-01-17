@@ -136,19 +136,16 @@ const App = () => {
       />
       {userAccessToken && (
         <div>
-          <p>Mã truy cập của bạn là: {userAccessToken}</p>
-
           {fanpages.map((fanpage) => {
             return <div class="d-flex position-relative">
               <div class="me-3">
-                <img src={fanpage?.picture?.data?.url} width="44px">
+                <image src={fanpage?.picture?.data?.url} width="44px" />
               </div>
               <div class="flex-fill">
                 <div class="fw-bold">{fanpage.name}</div>
                 <div class="small text-secondary">{fanpage.id}</div>
               </div>
             </div>
-
           })}
         </div>
       )}
