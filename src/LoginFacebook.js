@@ -109,43 +109,30 @@ import FacebookLogin from 'react-facebook-login';
 
 const App = () => {
   const [userAccessToken, setUserAccessToken] = useState(null);
-  const [fanpages, setFanpages] = useState([]);
+  // const [fanpages, setFanpages] = useState([]);
 
   const responseFacebook = (response) => {
     console.log(response);
     setUserAccessToken(response.accessToken);
   };
 
-  const fetchFanpages = async () => {
-    const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?access_token=${userAccessToken}`);
-    const data = await response.json();
-    console.log(data);
-    setFanpages(data.data);
-  };
+  // const fetchFanpages = async () => {
+  //   const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?access_token=${userAccessToken}`);
+  //   const data = await response.json();
+  //   console.log(data);
+  //   setFanpages(data.data);
+  // };
 
   return (
     <div>
-      <h1>Đăng nhập Facebook và lấy danh sách fanpage</h1>
+      <h1>#16</h1>
       <FacebookLogin
         appId="895989838589526"
         autoLoad={true}
         fields="name,email,picture"
-        // scope="public_profile,email,manage_pages"
+        scope="public_profile, pages_show_list"
         callback={responseFacebook}
       />
-      {userAccessToken && (
-        <div>
-          <p>Mã truy cập của bạn là: {userAccessToken}</p>
-          <button onClick={fetchFanpages}>Lấy danh sách fanpage</button>
-          <ul>
-            {fanpages.map((fanpage) => (
-              <li key={fanpage.id}>
-                {fanpage.name} - {fanpage.category}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
