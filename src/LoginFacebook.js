@@ -27,7 +27,7 @@ const App = () => {
         appId="895989838589526"
         autoLoad={true}
         fields="name,email,picture"
-        scope="public_profile,email,pages_show_list"
+        scope="public_profile,email,pages_show_list,pages_messaging"
         callback={responseFacebook}
       />
       {userAccessToken && (
