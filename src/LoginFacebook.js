@@ -34,9 +34,9 @@ const App = () => {
         <div>
           {fanpages.map((fanpage) => {
             return <div class="d-flex position-relative">
-              // eslint-disable-next-line react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes
+              {/* eslint-disable-next-line react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes */}
               <div class="me-3">
-                // eslint-disable-next-line jsx-a11y/alt-text, jsx-a11y/alt-text
+                {/* eslint-disable-next-line jsx-a11y/alt-text, jsx-a11y/alt-text */}
                 <img
                   style={{ borderRadius: '50%', border: '1px solid gray' }}
                   src={fanpage?.picture?.data?.url}
