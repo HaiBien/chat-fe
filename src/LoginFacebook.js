@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 
@@ -32,7 +34,9 @@ const App = () => {
         <div>
           {fanpages.map((fanpage) => {
             return <div class="d-flex position-relative">
+              // eslint-disable-next-line react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes
               <div class="me-3">
+                // eslint-disable-next-line jsx-a11y/alt-text, jsx-a11y/alt-text
                 <img
                   style={{ borderRadius: '50%', border: '1px solid gray' }}
                   src={fanpage?.picture?.data?.url}
@@ -51,8 +55,3 @@ const App = () => {
 };
 
 export default App;
-
-
-{/* <li key={fanpage.id}>
-   {fanpage.name} - {fanpage.category}
- </li> */}
