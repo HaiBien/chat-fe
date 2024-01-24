@@ -17,7 +17,6 @@ const App = () => {
   const fetchFanpages = async (token = userAccessToken) => {
     const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?fields=name,picture&access_token=${token}`);
     const data = await response.json();
-    console.log('data', data);
     setFanpages(data.data);
   };
 
@@ -30,7 +29,7 @@ const App = () => {
         scope="public_profile,email,pages_show_list,pages_messaging"
         callback={responseFacebook}
         render={renderProps => (
-          <button onClick={() => renderProps.onClick()}>This is my custom FB button</button>
+          <button onClick={renderProps.onClick}>This is my custom FB button</button>
         )}
       />
       {userAccessToken && (
