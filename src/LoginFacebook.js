@@ -31,7 +31,7 @@ const App = () => {
         scope="public_profile,email,pages_show_list,pages_messaging"
         callback={responseFacebook}
         render={renderProps => (
-          <button onClick={() => renderProps.onClick}>This is my custom FB button</button>
+          <button onClick={() => renderProps.onClick()}>This is my custom FB button</button>
         )}
       />
       {userAccessToken && (
