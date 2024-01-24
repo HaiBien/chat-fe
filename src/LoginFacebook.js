@@ -26,7 +26,6 @@ const App = () => {
       <h1>Đăng nhập Facebook và lấy danh sách fanpage</h1>
       <FacebookLogin
         appId="895989838589526"
-        autoLoad={true}
         fields="name,email,picture"
         scope="public_profile,email,pages_show_list,pages_messaging"
         callback={responseFacebook}
