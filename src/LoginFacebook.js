@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState } from 'react';
-import FacebookLogin from 'react-facebook-login';
+// import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 const App = () => {
   const [userAccessToken, setUserAccessToken] = useState(null);
@@ -29,6 +30,9 @@ const App = () => {
         fields="name,email,picture"
         scope="public_profile,email,pages_show_list,pages_messaging"
         callback={responseFacebook}
+        render={renderProps => (
+          <button onClick={() => renderProps.onClick}>This is my custom FB button</button>
+        )}
       />
       {userAccessToken && (
         <div>
