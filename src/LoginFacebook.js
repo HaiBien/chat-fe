@@ -9,7 +9,7 @@ const App = () => {
   const [fanpages, setFanpages] = useState([]);
 
   const responseFacebook = (response) => {
-    console.log(response);
+    console.log('auth', response);
     setUserAccessToken(response.accessToken);
     fetchFanpages(response.accessToken)
   };
@@ -17,6 +17,7 @@ const App = () => {
   const fetchFanpages = async (token = userAccessToken) => {
     const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?fields=name,picture&access_token=${token}`);
     const data = await response.json();
+    console.log('pages', data.data)
     setFanpages(data.data);
   };
 
@@ -26,7 +27,7 @@ const App = () => {
       <FacebookLogin
         appId="895989838589526"
         fields="name,email,picture"
-        scope="public_profile,email,pages_show_list,pages_messaging"
+        scope="public_profile,email,pages_show_list,pages_manage_metadata"
         callback={responseFacebook}
         render={renderProps => (
           <button onClick={renderProps.onClick}>This is my custom FB button</button>
