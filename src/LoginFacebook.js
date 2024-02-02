@@ -28,7 +28,7 @@ const App = () => {
         appId="895989838589526"
         fields="name,email,picture"
         // scope="public_profile,email,pages_show_list,pages_manage_metadata"
-        scope="public_profile,email,pages_show_list"
+        // scope="public_profile,email,pages_show_list"
         callback={responseFacebook}
         render={renderProps => (
           <button onClick={renderProps.onClick}>This is my custom FB button</button>
