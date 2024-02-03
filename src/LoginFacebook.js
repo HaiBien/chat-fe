@@ -27,7 +27,7 @@ const App = () => {
       <FacebookLogin
         appId="895989838589526"
         fields="name,email,picture"
-        scope="public_profile,email,pages_show_list,pages_manage_metadata"
+        scope="public_profile,email,pages_show_list,pages_manage_metadata,pages_messaging"
         // scope="public_profile,email,pages_show_list"
         callback={responseFacebook}
         render={renderProps => (
