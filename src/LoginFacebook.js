@@ -12,9 +12,9 @@ const App = () => {
   const [userAccessToken, setUserAccessToken] = useState(null);
   const [fanpages, setFanpages] = useState([]);
 
-  const responseFacebook = (response) => {
+  const responseFacebook = async (response) => {
     console.log('response', response)
-    const accessToken = fetchLongAccessToken(response.accessToken);
+    const accessToken = await fetchLongAccessToken(response.accessToken);
     setUserAccessToken(accessToken)
     fetchFanpages(accessToken)
   };
@@ -23,6 +23,7 @@ const App = () => {
     const params = `grant_type=${GRANT_TYPE}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&fb_exchange_token=${accessToken}`
     const response = await fetch(`https://graph.facebook.com/v18.0/oauth/access_token?${params}`);
     const data = await response.json();
+    console.log('LongAccessToken', data)
     const longAccessToken = data.access_token
     return longAccessToken
   }
