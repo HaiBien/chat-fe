@@ -6,7 +6,7 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 
 const GRANT_TYPE = 'fb_exchange_token'
 const CLIENT_ID = '895989838589526'
-const CLINET_SECRET = '1ac8787c421d716fddab7af68276d5d8'
+const CLIENT_SECRET = '1ac8787c421d716fddab7af68276d5d8'
 
 const App = () => {
   const [userAccessToken, setUserAccessToken] = useState(null);
@@ -20,7 +20,9 @@ const App = () => {
   };
 
   const fetchLongAccessToken = async (accessToken) => {
-    const response = await fetch(`https://graph.facebook.com/v18.0/oauth/access_token?grant_type=${GRANT_TYPE}&client_id=${CLIENT_ID}&client_secret=${CLINET_SECRET}&fb_exchange_token=${accessToken}`);
+    console.log('accessToken: ', accessToken)
+    const params = `grant_type=${GRANT_TYPE}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&fb_exchange_token=${accessToken}`
+    const response = await fetch(`https://graph.facebook.com/v18.0/oauth/access_token?${params}`);
     console.log('fetchLongAccessToken', response)
     const longAccessToken = response.access_token
     return longAccessToken
