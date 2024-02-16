@@ -23,6 +23,8 @@ const App = () => {
     console.log('accessToken: ', accessToken)
     const params = `grant_type=${GRANT_TYPE}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&fb_exchange_token=${accessToken}`
     const response = await fetch(`https://graph.facebook.com/v18.0/oauth/access_token?${params}`);
+    const data = await response.json();
+    console.log('datadatadata', data)
     console.log('fetchLongAccessToken', response)
     const longAccessToken = response.access_token
     return longAccessToken
