@@ -4,19 +4,30 @@ import React, { useState } from 'react';
 // import FacebookLogin from 'react-facebook-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
+const GRANT_TYPE = 'fb_exchange_token'
+const CLIENT_ID = '895989838589526'
+const CLINET_SECRET = '1ac8787c421d716fddab7af68276d5d8'
+
 const App = () => {
   const [userAccessToken, setUserAccessToken] = useState(null);
   const [fanpages, setFanpages] = useState([]);
 
   const responseFacebook = (response) => {
-    console.log('auth', response);
-    setUserAccessToken(response.accessToken);
-    fetchFanpages(response.accessToken)
+    console.log('response', response)
+    const accessToken = fetchLongAccessToken(response.accessToken);
+    setUserAccessToken(accessToken)
+    fetchFanpages(accessToken)
   };
+
+  const fetchLongAccessToken = async (accessToken) => {
+    const response = await fetch(`https://graph.facebook.com/v18.0/oauth/access_token?grant_type=${GRANT_TYPE}&client_id=${CLIENT_ID}&client_secret=${CLINET_SECRET}&fb_exchange_token=${accessToken}`);
+    console.log('fetchLongAccessToken', response)
+    const longAccessToken = response.access_token
+    return longAccessToken
+  }
 
   const fetchFanpages = async (token = userAccessToken) => {
     const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?fields=name,access_token,picture&access_token=${token}`);
-    // const response = await fetch(`https://graph.facebook.com/v18.0/me/accounts?access_token=${token}`);
     const data = await response.json();
     console.log('pages', data.data)
     setFanpages(data.data);
