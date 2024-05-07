@@ -23,7 +23,6 @@ const App = () => {
     const params = `grant_type=${GRANT_TYPE}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&fb_exchange_token=${accessToken}`
     const response = await fetch(`https://graph.facebook.com/v18.0/oauth/access_token?${params}`);
     const data = await response.json();
-    console.log('LongAccessToken', data)
     const longAccessToken = data.access_token
     return longAccessToken
   }
@@ -39,9 +38,9 @@ const App = () => {
     <div>
       <h1>Đăng nhập Facebook và lấy danh sách fanpage</h1>
       <FacebookLogin
-        appId="895989838589526"
+        appId="799817491570983"
         fields="name,email,picture"
-        scope="public_profile,email,pages_show_list,pages_manage_metadata,pages_messaging"
+        scope="public_profile,email,pages_show_list,pages_manage_metadata,pages_messaging,instagram_basic,business_management,instagram_manage_messages"
         // scope="public_profile,email,pages_show_list"
         callback={responseFacebook}
         render={renderProps => (
