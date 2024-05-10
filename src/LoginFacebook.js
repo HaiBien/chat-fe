@@ -40,7 +40,7 @@ const App = () => {
       <FacebookLogin
         appId="799817491570983"
         fields="name,email,picture"
-        scope="public_profile,email,pages_show_list,pages_manage_metadata,pages_messaging,instagram_basic,business_management,instagram_manage_messages"
+        scope="public_profile,email,pages_show_list,pages_manage_metadata,pages_messaging,instagram_basic,business_management"
         // scope="public_profile,email,pages_show_list"
         callback={responseFacebook}
         render={renderProps => (
