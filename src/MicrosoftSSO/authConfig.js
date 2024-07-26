@@ -1,4 +1,3 @@
-// src/authConfig.js
 import { PublicClientApplication } from "@azure/msal-browser";
 
 const msalConfig = {
@@ -14,6 +13,13 @@ const msalConfig = {
     }
 };
 
-const msalInstance = new PublicClientApplication(msalConfig);
+export const graphConfig = {
+    graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
+};
 
-export default msalInstance;
+export const loginRequest = {
+    scopes: ["User.Read"]
+};
+
+export const msalInstance = new PublicClientApplication(msalConfig);
+
